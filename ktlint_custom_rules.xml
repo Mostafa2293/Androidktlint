@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ktlint>
+    <experimental>
+        <rule id="no-wildcard-imports">
+            <config>
+                <active>false</active>
+            </config>
+        </rule>
+    </experimental>
+</ktlint>
