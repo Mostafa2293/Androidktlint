@@ -1,6 +1,5 @@
 package com.example.androidktlint
 
-import android.os.*
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,10 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidKtlintTheme { // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) { Greeting("Android") }
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) { Greeting("Android") }
             }
         }
     }

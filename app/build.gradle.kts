@@ -49,6 +49,9 @@ android {
         }
     }
 }
+
+tasks.getByPath("preBuild").dependsOn("ktlintFormat")
+
 ktlint {
     android.set(true)
     ignoreFailures.set(false)
@@ -57,6 +60,14 @@ ktlint {
         reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.SARIF)
         reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
     }
+}
+
+tasks.register<Copy>("installGitHook") {
+    description = "Install Git hook"
+    group = "custom"
+    from(File(rootProject.rootDir, "scripts/pre-commit"))
+    into { File(rootProject.rootDir, ".git/hooks") }
+    fileMode = 777
 }
 
 dependencies {
