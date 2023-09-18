@@ -12,6 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidktlint.ui.theme.AndroidKtlintTheme
 
+/**
+ * This is an Android Activity that displays a welcome message.
+ *
+ * @param savedInstanceState The saved instance state.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +28,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * This is Greeting function that displays a welcome message.
+ *
+ * @param name String.
+ * @param modifier Modifier
+ *
+ */
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    // Initialize and display the welcome message.
     Text(
         text = "Hello $name!",
         modifier = modifier
